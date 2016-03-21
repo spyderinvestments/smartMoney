@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/mpliang/angular-template-es5.svg?branch=master)](https://travis-ci.org/mpliang/angular-template-es5)
-# test
+# Test App [![Build Status](https://travis-ci.org/mpliang/angular-template-es5.svg?branch=master)](https://travis-ci.org/mpliang/angular-template-es5)
 
 **Generated from HotTowel Angular**
 
