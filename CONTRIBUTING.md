@@ -144,7 +144,7 @@ Thanks for contributing!
 1. Uphold the current code standard:
     - Keep your code [DRY][].
     - Apply the [boy scout rule][].
-    - Follow [STYLE-GUIDE.md](STYLE-GUIDE.md)
+    - Follow [STYLE-GUIDE.md](https://github.com/johnpapa/angularjs-styleguide)
 2. Run the [tests][] before submitting a pull request.
 3. Tests are very, very important. Submit tests if your pull request contains
    new, testable behavior.
@@ -154,7 +154,7 @@ Thanks for contributing!
 
 This is just to help you organize your process
 
-- [ ] Did I cut my work branch off of master (don't cut new branches from existing feature brances)?
+- [ ] Did I cut my work branch off of master (don't cut new branches from existing feature branches)?
 - [ ] Did I follow the correct naming convention for my branch?
 - [ ] Is my branch focused on a single main change?
  - [ ] Do all of my changes directly relate to this change?
