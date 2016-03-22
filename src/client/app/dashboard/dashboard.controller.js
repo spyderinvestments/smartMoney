@@ -5,9 +5,9 @@
         .module('app.dashboard')
         .controller('DashboardController', DashboardController);
 
-    DashboardController.$inject = ['$q', '$uibModal', '$uibModalInstance', 'dataservice', 'logger'];
+    DashboardController.$inject = ['$q', '$uibModal', 'dataservice', 'logger'];
     /* @ngInject */
-    function DashboardController($q, $uibModal, $uibModalInstance, dataservice, logger) {
+    function DashboardController($q, $uibModal, dataservice, logger) {
         var vm = this;
 
         vm.allBills = [];
@@ -40,34 +40,34 @@
           $uibModalInstance.dismiss('cancel');
         };
 
-        vm.open = function (size) {
-          // AddBillController.$inject = ['$uibModalInstance'];
-            // function AddBillController($uibModalInstance) {
-            //   var vm = this;
-            //   // vm.addBill = function () {
-            //   //   $log.info('Add clicked')
-            //   //   //TODO: post new bill
-            //   //   // $uibModalInstance.close(vm.selected.item);
-            //   // };
-            //   //
-            //   // vm.cancel = function () {
-            //   //   $log.info('Cancel clicked')
-            //   //   $uibModalInstance.dismiss('cancel');
-            //   // };
-            // }
+        vm.add = function () {
 
-            var modalInstance = $uibModal.open({
-              animation: true,
-              templateUrl: 'myModalContent.html'
-            });
+          function AddBillController($scope, $uibModalInstance) {
+            var vm = $scope;
+            $scope.addBill = function (bill) {
+              //TODO: post new bill
+              console.log('add new bill');
+              console.log(bill);
+              // $uibModalInstance.close($scope.selected.item);
+            };
 
-            modalInstance.result.then(function (selectedItem) {
-              vm.selected = selectedItem;
-            }, function () {
-              $log.info('Modal dismissed at: ' + new Date());
-            });
-          };
+            $scope.cancel = function () {
+              console.log('cancel?');
+              $uibModalInstance.dismiss('cancel');
+            };
+          }
 
+          var modalInstance = $uibModal.open({
+            animation: true,
+            controller: AddBillController,
+            templateUrl: 'myModalContent.html'
+          });
+
+          modalInstance.result.then(function (selectedItem) {
+          }, function () {
+            logger.info('Modal dismissed at: ' + new Date());
+          });
+        };
 
 
 

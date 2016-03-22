@@ -14,13 +14,13 @@
     function getStates() {
         return [
             {
-                state: 'dashboard',
+                state: 'user',
                 config: {
                     url: '/',
-                    templateUrl: 'app/dashboard/dashboard.html',
+                    templateUrl: 'app/user/user.html',
                     controller: 'DashboardController',
                     controllerAs: 'vm',
-                    title: 'dashboard',
+                    title: 'user',
                     settings: {
                         nav: 1,
                         content: '<i class="fa fa-dashboard"></i> Dashboard'
