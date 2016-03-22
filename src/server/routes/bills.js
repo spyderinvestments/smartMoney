@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express'),
   Bill = require('../models/bill');
 
@@ -5,13 +7,13 @@ let router = express.Router();
 
 /* GET users listing. */
 router.get('/',  (req, res, next) => {
-  Bill.find( (err, data) {
+  Bill.find( (err, data) => {
     console.log(data);
     res.send(data);
   });
 });
 
-router.delete('/',  (req, res, next) {
+router.delete('/',  (req, res, next) => {
   // console.log(Bill.find(req.body));
   Bill.find(req.body).remove( (err, data) => {
     res.send(data);

@@ -1,9 +1,9 @@
 // modules =================================================
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
 
 // schema ==================================================
-var billSchema = new Schema({
+let billSchema = new Schema({
   name: { type: String },
   due: {type: Date },
   split: {type: Array },
