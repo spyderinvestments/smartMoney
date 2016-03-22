@@ -9,12 +9,8 @@
     /* @ngInject */
     function DashboardController($q, dataservice, logger) {
         var vm = this;
-        vm.news = {
-            title: 'test',
-            description: 'Hot Towel Angular is a SPA template for Angular developers.'
-        };
-        vm.messageCount = 0;
-        vm.people = [];
+
+        vm.allBills = [];
         vm.title = 'Dashboard';
 
         activate();
@@ -26,17 +22,11 @@
             });
         }
 
-        // function getMessageCount() {
-        //     return dataservice.getMessageCount().then(function (data) {
-        //         vm.messageCount = data;
-        //         return vm.messageCount;
-        //     });
-        // }
-
         function getBills() {
             return dataservice.getBills().then(function (data) {
-                vm.bills = data;
-                return vm.bills;
+                vm.allBills = data;
+                console.log(vm.allBills);
+                return vm.allBills;
             });
         }
     }

@@ -29,7 +29,7 @@
             //Force a 1 second delay so we can see the splash.
             $timeout(function() {
                 $rootScope.showSplash = false;
-            }, 1000);
+            }, 1300);
         }
     }
 })();
