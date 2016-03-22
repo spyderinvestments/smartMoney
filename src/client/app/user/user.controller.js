@@ -43,12 +43,12 @@
     'use strict';
 
     angular
-        .module('app.dashboard')
-        .controller('DashboardController', DashboardController);
+        .module('app.user')
+        .controller('UserController', UserController);
 
-    DashboardController.$inject = ['$q', '$uibModal', '$uibModalInstance', 'dataservice', 'logger'];
+    UserController.$inject = ['$q', '$uibModal', '$uibModalInstance', 'userservice', 'logger'];
     /* @ngInject */
-    function DashboardController($q, $uibModal, $uibModalInstance, dataservice, logger) {
+    function UserController($q, $uibModal, $uibModalInstance, userservice, logger) {
         var vm = this;
 
 

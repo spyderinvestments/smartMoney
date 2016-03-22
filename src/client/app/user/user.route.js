@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.dashboard')
+        .module('app.user')
         .run(appRun);
 
     appRun.$inject = ['routerHelper'];
@@ -23,7 +23,7 @@
                     title: 'user',
                     settings: {
                         nav: 1,
-                        content: '<i class="fa fa-dashboard"></i> Dashboard'
+                        content: '<i class="fa fa-dashboard"></i> User'
                     }
                 }
             }
