@@ -2,7 +2,7 @@
 
 const express = require('express'),
   User = require('../models/user'),
-  authMiddleware = require('../middleware/auth-middleware');
+  authMiddleware = require('../utils/authenticate');
 
 let router = express.Router();
 

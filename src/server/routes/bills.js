@@ -8,7 +8,6 @@ let router = express.Router();
 /* GET users listing. */
 router.get('/',  (req, res, next) => {
   Bill.find( (err, data) => {
-    console.log(data);
     res.send(data);
   });
 });
@@ -27,9 +26,8 @@ router.delete('/',  (req, res, next) => {
 // })
 
 router.post('/',  (req, res, next) => {
-  console.log(req.body);
-  Bill.create(req.body,  (err, savedAnimal) => {
-    res.status(err ? 400 : 200).send(err || savedAnimal);
+  Bill.create(req.body,  (err, bill) => {
+    res.status(err ? 400 : 200).send(err || bill);
   });
 });
 
