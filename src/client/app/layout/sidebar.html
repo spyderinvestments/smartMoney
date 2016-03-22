@@ -1,4 +1,4 @@
-﻿<div ng-controller="SidebarController as vm">
+<!-- <div ng-controller="SidebarController as vm">
     <ht-sidebar when-done-animating="vm.sidebarReady()">
         <div class="sidebar-filler"></div>
         <div class="sidebar-dropdown"><a href="#">Menu</a></div>
@@ -13,4 +13,22 @@
             </ul>
         </div>
     </ht-sidebar>
+</div> -->
+
+<div ng-controller="SidebarController as vm">
+    <ht-sidebar when-done-animating="vm.sidebarReady()">
+        <div class="sidebar-inner">
+            <!-- <a ui-sref="dashboard">Dashboard</a> -->
+            <h5>Groups:
+                <small>Roommates</small>
+            </h5>
+            <h5>Friends:
+                <small>None yet!</small>
+            </h5>
+            <h5>Invite friends!</h5>
+            <input type="text" placeholder="Enter an email"/>
+            <button class="btn btn-info btn-xs">Send</input>
+        </div>
+    </ht-sidebar>
+
 </div>

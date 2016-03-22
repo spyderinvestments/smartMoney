@@ -13,8 +13,8 @@
     }
 
     var config = {
-        appErrorPrefix: '[test Error] ',
-        appTitle: 'test'
+        appErrorPrefix: '[Smart Money Error] ',
+        appTitle: 'Smart Money'
     };
 
     core.value('config', config);

@@ -1,4 +1,4 @@
-<section id="dashboard-view" class="mainbar">
+<!-- <section id="dashboard-view" class="mainbar">
     <section class="matter">
         <div class="container">
             <div class="row">
@@ -65,6 +65,36 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+</section> -->
+
+<section id="dashboard-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+
+            <div>
+                <div class="row">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="isCollapsed = !isCollapsed">March 2016</button>
+                </div>
+                <div ng-repeat="bill in allBills track by $index" uib-collapse="isCollapsed">
+                    <div class="row">
+                        <div class="col-md-2">
+                            {{bill.due | date}}
+                        </div>
+                        <div class="col-md-6">
+                            {{bill.name}}
+                        </div>
+                        <div class="col-md-2">
+                            {{bill.amount | currency}}
+                        </div>
+                        <div class="col-md-2">
+                            Amount owed
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

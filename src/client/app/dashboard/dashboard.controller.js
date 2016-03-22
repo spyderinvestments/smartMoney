@@ -20,23 +20,23 @@
         activate();
 
         function activate() {
-            var promises = [getMessageCount(), getPeople()];
+            var promises = [getBills()];
             return $q.all(promises).then(function() {
                 logger.info('Activated Dashboard View');
             });
         }
 
-        function getMessageCount() {
-            return dataservice.getMessageCount().then(function (data) {
-                vm.messageCount = data;
-                return vm.messageCount;
-            });
-        }
+        // function getMessageCount() {
+        //     return dataservice.getMessageCount().then(function (data) {
+        //         vm.messageCount = data;
+        //         return vm.messageCount;
+        //     });
+        // }
 
-        function getPeople() {
-            return dataservice.getPeople().then(function (data) {
-                vm.people = data;
-                return vm.people;
+        function getBills() {
+            return dataservice.getBills().then(function (data) {
+                vm.bills = data;
+                return vm.bills;
             });
         }
     }
