@@ -16,9 +16,9 @@
             {
                 state: 'user',
                 config: {
-                    url: '/',
+                    url: '/user',
                     templateUrl: 'app/user/user.html',
-                    controller: 'DashboardController',
+                    controller: 'UserController',
                     controllerAs: 'vm',
                     title: 'user',
                     settings: {

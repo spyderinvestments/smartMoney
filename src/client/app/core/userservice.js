@@ -10,7 +10,7 @@
     /* @ngInject */
     function userservice($http, $q, exception, logger) {
         var service = {
-            forceSSL: forcceSSL,
+            forceSSL: forceSSL,
             register: register,
             login: login,
             logout: logout,

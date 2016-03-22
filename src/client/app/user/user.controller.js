@@ -46,9 +46,9 @@
         .module('app.user')
         .controller('UserController', UserController);
 
-    UserController.$inject = ['$q', '$uibModal', '$uibModalInstance', 'userservice', 'logger'];
+    UserController.$inject = ['$q', 'userservice', 'logger'];
     /* @ngInject */
-    function UserController($q, $uibModal, $uibModalInstance, userservice, logger) {
+    function UserController($q, userservice, logger) {
         var vm = this;
 
 
