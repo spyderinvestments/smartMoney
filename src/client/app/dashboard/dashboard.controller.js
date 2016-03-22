@@ -5,9 +5,9 @@
         .module('app.dashboard')
         .controller('DashboardController', DashboardController);
 
-    DashboardController.$inject = ['$q', '$uibModal', '$log', 'dataservice', 'logger'];
+    DashboardController.$inject = ['$q', '$uibModal', '$uibModalInstance', 'dataservice', 'logger'];
     /* @ngInject */
-    function DashboardController($q, $uibModal, $log, dataservice, logger) {
+    function DashboardController($q, $uibModal, $uibModalInstance, dataservice, logger) {
         var vm = this;
 
         vm.allBills = [];
@@ -29,22 +29,35 @@
             });
         }
 
+        vm.addBill = function () {
+          logger.info('Add clicked')
+          //TODO: post new bill
+          // $uibModalInstance.close(vm.selected.item);
+        };
+
+        vm.cancel = function () {
+          logger.info('Cancel clicked')
+          $uibModalInstance.dismiss('cancel');
+        };
+
         vm.open = function (size) {
-
-            function addBillCtrl($scope, $uibModalInstance) {
-              vm.ok = function () {
-                //TODO: post new bill
-                // $uibModalInstance.close(vm.selected.item);
-              };
-
-              vm.cancel = function () {
-                $uibModalInstance.dismiss('cancel');
-              };
-            }
+          // AddBillController.$inject = ['$uibModalInstance'];
+            // function AddBillController($uibModalInstance) {
+            //   var vm = this;
+            //   // vm.addBill = function () {
+            //   //   $log.info('Add clicked')
+            //   //   //TODO: post new bill
+            //   //   // $uibModalInstance.close(vm.selected.item);
+            //   // };
+            //   //
+            //   // vm.cancel = function () {
+            //   //   $log.info('Cancel clicked')
+            //   //   $uibModalInstance.dismiss('cancel');
+            //   // };
+            // }
 
             var modalInstance = $uibModal.open({
               animation: true,
-              controller: addBillCtrl,
               templateUrl: 'myModalContent.html'
             });
 
