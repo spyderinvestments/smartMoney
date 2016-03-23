@@ -8,7 +8,7 @@
 // localStorageService
     userservice.$inject = ['$http', '$state', '$rootScope', '$window', '$location', '$q', 'exception', 'logger', 'CONST'];
     /* @ngInject */
-    function userservice($http, $q, exception, logger) {
+    function userservice($http, $state, $rootScope, $window, $location, $q, exception, logger, CONST) {
         var service = {
             forceSSL: forceSSL,
             register: register,
