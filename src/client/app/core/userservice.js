@@ -37,14 +37,14 @@
           }
 
           function login(loginInfo) {
-            return $http.post(`${CONST.API_URL}/users/login`, loginInfo)
+            return $http.post(`/users/login`, loginInfo)
              .success( resp => {
                updateToken(resp);
              })
           }
 
           function register (registerInfo) {
-            return $http.post(`${CONST.API_URL}/users/register`, registerInfo)
+            return $http.post(`/users/register`, registerInfo)
              .success( resp => {
                updateToken(resp);
              })
