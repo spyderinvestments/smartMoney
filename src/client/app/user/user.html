@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-md-offset-1">
-                    <form class="form-horizontal" ng-submit="register(user)">
+                    <form class="form-horizontal" ng-submit="vm.register(user)">
                         <fieldset>
                             <legend>Register</legend>
                             <div class="form-group">
@@ -31,8 +31,7 @@
                                 </div>
                                 <label for="inputPassword" class="col-md-3 control-label">Verify Password</label>
                                 <div class="col-md-9">
-
-                                    <input type="password" class="form-control" id="passwordVerify" placeholder="Password">
+                                    <input type="password" class="form-control" id="passwordVerify" placeholder="Password" ng-model="user.password2">
                                 </div>
 
                                 <!-- <div class="form-group has-error">
@@ -52,7 +51,7 @@
                 </div>
 
                 <div class="col-md-5">
-                    <form class="form-horizontal" ng-submit="login()">
+                    <form class="form-horizontal" ng-submit="vm.login()">
                         <fieldset>
                             <legend>Login</legend>
                             <div class="form-group">

@@ -1,7 +1,7 @@
 // 'use strict';
 //
 // //index, navbar controller
-// app.controller('loginCtrl', function ($scope, $state, $rootScope, userService) {
+// app.controller('loginCtrl', function ($scope, $state, $rootScope, userservice) {
 //   if (localStorage.getItem("token")) {
 //     $state.go('dashboard');
 //   }
@@ -46,11 +46,43 @@
         .module('app.user')
         .controller('UserController', UserController);
 
-    UserController.$inject = ['$q', 'userservice', 'logger'];
+    UserController.$inject = ['$q', '$rootScope', 'userservice', 'logger'];
     /* @ngInject */
-    function UserController($q, userservice, logger) {
+    function UserController($q, $rootScope, userservice, logger) {
         var vm = this;
+        logger.info('inside user controller')
+        vm.register = function (user) {
+            logger.info('register clicked', user);
+            userservice.register(user)
+                .then(function (resp) {
+                    console.log(resp);
+                    localStorage.setItem("token", resp.data);
+                    $rootScope.loggedIn = !localStorage.getItem("token");
+                    vm.go('dashboard');
+                }, function (err) {
+                    console.error(err.data);
+                    vm.error = err.data;
+                });
+        }
 
+        vm.login = function () {
+            logger.info('login')
+            userservice.login(vm.loginEmail, vm.loginPassword)
+                .then(function (resp) {
+                    localStorage.setItem("token", resp.data);
+                    $rootScope.loggedIn = !localStorage.getItem("token");
+                    $state.go('dashboard');
+                }, function (err) {
+                    vm.error = err.data;
+                });
+        }
+
+        vm.logout = function () {
+            logger.info('logout')
+            localStorage.removeItem("token");
+            $rootScope.loggedIn = !localStorage.getItem("token");
+            $state.go('home');
+        }
 
 
     }
