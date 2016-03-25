@@ -12,12 +12,7 @@
         vm.busyMessage = 'Please wait ...';
         vm.isBusy = true;
         $rootScope.showSplash = true;
-        vm.navline = {
-            title: config.appTitle,
-            text: 'Modified by Michael Liang',
-            link: 'http://www.michaelpliang.com'
-        };
-
+        
         activate();
 
         function activate() {
