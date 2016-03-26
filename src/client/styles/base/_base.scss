@@ -18,6 +18,11 @@ $color_violet: #932ab6;
     /*font-weight: 400;*/
 }
 
+.content {
+  max-width: 900px;
+  margin: auto;
+}
+
 .btn, .badge, .modal, .modal-dialog, .modal-content,
 input, select {
     -ms-border-radius: 0 !important;
@@ -607,10 +612,10 @@ form label {
     padding: 12px 20px;
     font-size: 15px;
     line-height: 25px;
-    color: #fff;
+    // color: #fff;
     text-decoration: none;
     border-bottom: 1px solid #222;
-    background-color: #111;
+    // background-color: #111;
 }
 
 .sidebar .navi > li > a:hover, .sidebar .navi > li.open > a {
@@ -791,7 +796,7 @@ form label {
 
 .mainbar {
     position: relative;
-    margin-left: 230px;
+    // margin-left: 230px;
     margin-right: 0;
     width: auto;
     background: #fff;
@@ -1321,7 +1326,7 @@ body {
 }
 
 .sidebar .navi > li > a {
-    background-color: #333 !important;
+    // background-color: #333 !important;
 }
 
 .sidebar .navi li ul li a {

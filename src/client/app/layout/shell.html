@@ -3,9 +3,9 @@
         <ht-top-nav navline="vm.navline"></ht-top-nav>
     </header>
     <section id="content" class="content">
-        <div ng-include="'app/layout/sidebar.html'"></div>
+        <div class="col-md-3" ng-include="'app/layout/sidebar.html'"></div>
 
-        <div ui-view class="shuffle-animation"></div>
+        <div ui-view class="col-md-9 shuffle-animation"></div>
 
         <div ngplus-overlay
              ngplus-overlay-delay-in="50"
@@ -15,5 +15,9 @@
 
             <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
         </div>
+
     </section>
+    <footer>
+      <div ng-include="'app/layout/botbar.html'"></div>
+    </footer>
 </div>

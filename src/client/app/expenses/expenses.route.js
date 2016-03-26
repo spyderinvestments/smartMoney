@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.user')
+        .module('app.expenses')
         .run(appRun);
 
     appRun.$inject = ['routerHelper'];
@@ -14,16 +14,16 @@
     function getStates() {
         return [
             {
-                state: 'user',
+                state: 'expenses',
                 config: {
-                    url: '/user',
-                    templateUrl: 'app/user/user.html',
-                    controller: 'UserController',
+                    url: '/expenses',
+                    templateUrl: 'app/expenses/expenses.html',
+                    controller: 'ExpensesController',
                     controllerAs: 'vm',
-                    title: 'user',
+                    title: 'expenses',
                     settings: {
-                        nav: 2,
-                        content: '<i class="fa fa-dashboard"></i> User'
+                        nav: 3,
+                        content: '<i class="fa fa-dashboard"></i> Expenses'
                     }
                 }
             }

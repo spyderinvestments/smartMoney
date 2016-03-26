@@ -1,0 +1,91 @@
+<section id="dashboard-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+
+            <div class="col-md-8">
+                <div class="row">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="isCollapsed = !isCollapsed">March 2016</button>
+                </div>
+
+                <div ng-repeat="bill in vm.allBills track by $index" uib-collapse="isCollapsed">
+                    <div class="row">
+                        <div class="col-md-2">
+                            {{bill.due | date}}
+                        </div>
+                        <div class="col-md-6">
+                            {{bill.name}}
+                        </div>
+                        <div class="col-md-2">
+                            {{bill.amount | currency}}
+                        </div>
+                        <div class="col-md-2">
+                            Amount owed:
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div>
+                    <button class="btn btn-warning btn-sm btn-block" ng-click="vm.add()">Add Bill</button>
+                    <button class="btn btn-default btn-sm btn-block" ng-click="vm.open()">Pay Bill</button>
+                </div>
+                <h5>
+                    You are owed:
+                </h5>
+                <b>$342.01</b>
+            </div>
+
+            <div>
+                <script type="text/ng-template" id="myModalContent.html">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Add A New Bill</h3>
+                    </div>
+                    <div class="modal-body">
+
+                        <form class="form-horizontal" ng-submit="addBill(bill)">
+                            <fieldset>
+
+                                <div class="form-group">
+                                    <label for="splitters" class="col-md-3 control-label">Share Bill With</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="splitters" placeholder="Enter people you wish to split the bill with" ng-model="bill.splitters">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description" class="col-md-3 control-label">Description</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="description" ng-model="bill.description">
+                                    </div>
+                                    <label for="amount" class="col-md-3 control-label">Amount</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="amount" ng-model="bill.amount">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="due" class="col-md-3 control-label">Due</label>
+                                    <div class="col-md-9">
+                                        <input type="date" class="form-control" id="due" placeholder="mm/dd/yyyy" ng-model="bill.due">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="notes" class="col-md-3 control-label">Additional Notes:</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="notes" ng-model="bill.notes">
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit">Save</button>
+                        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+                    </div>
+                </script>
+            </div>
+        </div>
+    </section>
+</section>
