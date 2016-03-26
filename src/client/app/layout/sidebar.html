@@ -18,7 +18,13 @@
 <div ng-controller="SidebarController as vm">
     <ht-sidebar when-done-animating="vm.sidebarReady()">
         <div class="sidebar-inner">
-            <!-- <a ui-sref="dashboard">Dashboard</a> -->
+            <ul class="navi">
+                <li class="fade-selection-animation" ng-class="vm.isCurrent(r)" ng-repeat="r in vm.navRoutes">
+                    <a ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
+                </li>
+            </ul>
+
+
             <h5>Groups:
                 <small>Roommates</small>
             </h5>
@@ -30,5 +36,4 @@
             <button class="btn btn-info btn-xs">Send</input>
         </div>
     </ht-sidebar>
-
 </div>
