@@ -41,7 +41,7 @@ let userSchema = mongoose.Schema({
 //   let updateUser = new Promise((resolve, reject) => {
 //     User.findByIdAndUpdate(userId, {
 //       $addToSet: {
-//         "likes": resourceId
+//         'likes': resourceId
 //       }
 //     }, {
 //       new: true
@@ -53,8 +53,8 @@ let userSchema = mongoose.Schema({
 //   let updateResource = new Promise((resolve, reject) => {
 //     Resource.findByIdAndUpdate(resourceId, {
 //       $inc: {
-//         "likes": 1,
-//         "total": 1
+//         'likes': 1,
+//         'total': 1
 //       }
 //     }, (err) => {
 //       if (err) return reject(err);
@@ -63,9 +63,9 @@ let userSchema = mongoose.Schema({
 //   })
 //
 //   Promise.all([updateUser, updateResource]).then((value) => {
-//     cb(null, "success")
+//     cb(null, 'success')
 //   }, (err) => {
-//     console.log("error liking resource", resourceId, userId, err);
+//     console.log('error liking resource', resourceId, userId, err);
 //     cb(err)
 //   })
 // }
@@ -74,7 +74,7 @@ let userSchema = mongoose.Schema({
 //   let updateUser = new Promise((resolve, reject) => {
 //     User.findByIdAndUpdate(userId, {
 //       $addToSet: {
-//         "strikes": resourceId
+//         'strikes': resourceId
 //       }
 //     }, (err) => {
 //       if (err) return reject(err);
@@ -84,7 +84,7 @@ let userSchema = mongoose.Schema({
 //   let updateResource = new Promise((resolve, reject) => {
 //     Resource.findByIdAndUpdate(resourceId, {
 //       $inc: {
-//         "total": 1
+//         'total': 1
 //       }
 //     }, (err) => {
 //       if (err) return reject(err);
@@ -93,9 +93,9 @@ let userSchema = mongoose.Schema({
 //   })
 //
 //   Promise.all([updateUser, updateResource]).then((value) => {
-//     cb(null, "success")
+//     cb(null, 'success')
 //   }, (err) => {
-//     console.log("error striking resource", resourceId, userId, err);
+//     console.log('error striking resource', resourceId, userId, err);
 //     cb(err)
 //   })
 // }
@@ -158,7 +158,7 @@ userSchema.statics.register = function (userInfo, cb) {
 
     // compare passwords
     if (password !== password2) {
-        return cb("Passwords do not match.");
+        return cb('Passwords do not match.');
     }
 
     // validate password
@@ -198,10 +198,10 @@ userSchema.statics.register = function (userInfo, cb) {
                         email: email,
                         password: hashedPassword
                     });
-                    console.log("new USER", newUser);
+                    console.log('new USER', newUser);
                     newUser.save((err, savedUser) => {
                         if (err || !savedUser) {
-                            console.log("error saving new user", err);
+                            console.log('error saving new user', err);
                             return cb('Username or email already taken.');
                         }
                         /* jshint ignore:start */
@@ -215,7 +215,7 @@ userSchema.statics.register = function (userInfo, cb) {
                                     `${CONST.frontEndUrl}\n\n`
                             };
                             mailgun.messages().send(emailData, function (err, body) {
-                                if (err) console.log("mailgun Error", err);
+                                if (err) console.log('mailgun Error', err);
                             });
                         }
                         /* jshint ignore:end */
@@ -244,7 +244,7 @@ userSchema.statics.getOneAuth = (req, res, cb) => {
             .populate('likes')
             .exec((err, user) => {
                 if (err || !user) {
-                    console.log("error at User.getOneAuth", err || 'no user found');
+                    console.log('error at User.getOneAuth', err || 'no user found');
                     return cb('error finding a user', null, res.status(400));
                 }
                 // make most recent likes appear first

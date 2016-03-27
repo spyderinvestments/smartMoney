@@ -27,8 +27,6 @@ let billSchema = new Schema({
         default: 'none'
     }
 });
-
 //method to update user with their share of the bill
-
 
 module.exports = mongoose.model('Bill', billSchema);

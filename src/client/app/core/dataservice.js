@@ -15,19 +15,21 @@
 
         return service;
 
-        function getMessageCount() { return $q.when(72); }
+        function getMessageCount() {
+            return $q.when(72);
+        }
 
         function getBills() {
-          return $http.get('/api/')
-            .then(success)
-            .catch(fail);
+            return $http.get('/api/')
+                .then(success)
+                .catch(fail);
 
             function success(response) {
-              return response.data;
+                return response.data;
             }
 
             function fail(e) {
-              return exception.catcher('Get failed for getBills')(e);
+                return exception.catcher('Get failed for getBills')(e);
             }
         }
 

@@ -3,12 +3,8 @@
 
     "requireOperatorBeforeLineBreak": true,
     "requireCamelCaseOrUpperCaseIdentifiers": false,
-    "maximumLineLength": {
-      "value": 100,
-      "allowComments": true,
-      "allowRegex": true
-    },
     "validateIndentation": 4,
+    "validateQuoteMarks": "'",
 
     "disallowMultipleLineStrings": true,
     "disallowMixedSpacesAndTabs": true,
@@ -51,7 +47,7 @@
         "checkTypes": true
     },
 
-    "disallowMultipleLineBreaks": true,
+    "disallowMultipleLineBreaks": false,
 
     "disallowCommaBeforeLineBreak": null,
     "disallowDanglingUnderscores": null,
