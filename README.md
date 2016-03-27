@@ -4,10 +4,11 @@
 
 ## Table of Contents
 
-1. [Usage](##Usage)
+
 1. [Scope](##Scope)
-    1. [Installing Dependencies](##Installation)
+    1. [Features](###Features)
     1. [TODO](#Todo)
+    1. [Installing Dependencies](##Installation)
 
 ## Scope:
 
@@ -21,19 +22,21 @@
 
 ### Features:
 
+This is a MEAN Stack app which includes:
+
+- Node
+- Angular
+- Angular UI Router
+- Bootstrap
+- SASS
+- Gulp
+- Mocha, Chai, Karma
 
 ### Todo:
 
 - [ ] Update custom 404 page
 
-This is a MEAN Stack app which includes:
 
-- Express
-- Mongoose
-- Angular
-- Angular UI Router
-- jQuery
-- Bootstrap
 
 
 ### Installation
