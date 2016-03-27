@@ -1,4 +1,4 @@
-# Smart Money
+# Smart Money [![Build Status](https://travis-ci.org/spyderinvestments/smartMoney.svg?branch=master)](https://travis-ci.org/spyderinvestments/smartMoney)
 
 >Work in Progress
 
