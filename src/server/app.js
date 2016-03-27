@@ -19,15 +19,17 @@ mongoose.connect(mongoUrl);
 // CORS
 let whitelist = ['http://localhost:8000'];
 let corsOptions = {
-  origin: function (origin, callback) {
-    let originIsWhitelisted = whitelist.indexOf(origin) !== -1;
-    callback(null, originIsWhitelisted);
-  }
+    origin: function (origin, callback) {
+        let originIsWhitelisted = whitelist.indexOf(origin) !== -1;
+        callback(null, originIsWhitelisted);
+    }
 };
 app.use(cors(corsOptions));
 
 app.use(favicon(__dirname + '/favicon.ico'));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
@@ -38,12 +40,12 @@ console.log('About to crank up node');
 console.log('PORT=' + port);
 console.log('NODE_ENV=' + environment);
 
-switch (environment){
+switch (environment) {
     case 'build':
         console.log('** BUILD **');
         app.use(express.static('./build/'));
         // Any invalid calls for templateUrls are under app/* and should return 404
-        app.use('/app/*', function(req, res, next) {
+        app.use('/app/*', function (req, res, next) {
             four0four.send404(req, res);
         });
         // Any deep link calls should return index.html
@@ -55,7 +57,7 @@ switch (environment){
         app.use(express.static('./'));
         app.use(express.static('./tmp'));
         // Any invalid calls for templateUrls are under app/* and should return 404
-        app.use('/app/*', function(req, res, next) {
+        app.use('/app/*', function (req, res, next) {
             four0four.send404(req, res);
         });
         // Any deep link calls should return index.html
@@ -63,9 +65,9 @@ switch (environment){
         break;
 }
 
-app.listen(port, function() {
+app.listen(port, function () {
     console.log('Express server listening on port ' + port);
     console.log('env = ' + app.get('env') +
-        '\n__dirname = ' + __dirname  +
+        '\n__dirname = ' + __dirname +
         '\nprocess.cwd = ' + process.cwd());
 });

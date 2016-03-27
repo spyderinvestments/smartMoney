@@ -29,46 +29,6 @@
             });
         }
 
-        vm.addBill = function () {
-          logger.info('Add clicked')
-          //TODO: post new bill
-          // $uibModalInstance.close(vm.selected.item);
-        };
-
-        vm.cancel = function () {
-          logger.info('Cancel clicked')
-          $uibModalInstance.dismiss('cancel');
-        };
-
-        vm.add = function () {
-
-          function AddBillController($scope, $uibModalInstance) {
-            var vm = $scope;
-            $scope.addBill = function (bill) {
-              //TODO: post new bill
-              console.log('add new bill');
-              console.log(bill);
-              // $uibModalInstance.close($scope.selected.item);
-            };
-
-            $scope.cancel = function () {
-              console.log('cancel?');
-              $uibModalInstance.dismiss('cancel');
-            };
-          }
-
-          var modalInstance = $uibModal.open({
-            animation: true,
-            controller: AddBillController,
-            templateUrl: 'myModalContent.html'
-          });
-
-          modalInstance.result.then(function (selectedItem) {
-          }, function () {
-            logger.info('Modal dismissed at: ' + new Date());
-          });
-        };
-
 
 
     }

@@ -46,11 +46,11 @@
         .module('app.user')
         .controller('UserController', UserController);
 
-    UserController.$inject = ['$q', '$rootScope', 'userservice', 'logger'];
+    UserController.$inject = ['$state', '$q', '$rootScope', 'userservice', 'logger'];
     /* @ngInject */
-    function UserController($q, $rootScope, userservice, logger) {
+    function UserController($state, $q, $rootScope, userservice, logger) {
         var vm = this;
-        logger.info('inside user controller')
+        logger.info('inside user controller');
         vm.register = function (user) {
             logger.info('register clicked', user);
             userservice.register(user)
@@ -63,10 +63,10 @@
                     console.error(err.data);
                     vm.error = err.data;
                 });
-        }
+        };
 
         vm.login = function () {
-            logger.info('login')
+            logger.info('login');
             userservice.login(vm.loginEmail, vm.loginPassword)
                 .then(function (resp) {
                     localStorage.setItem("token", resp.data);
@@ -75,15 +75,14 @@
                 }, function (err) {
                     vm.error = err.data;
                 });
-        }
+        };
 
         vm.logout = function () {
-            logger.info('logout')
+            logger.info('logout');
             localStorage.removeItem("token");
             $rootScope.loggedIn = !localStorage.getItem("token");
             $state.go('home');
-        }
-
+        };
 
     }
 })();

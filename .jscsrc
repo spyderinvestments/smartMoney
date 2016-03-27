@@ -1,24 +1,14 @@
 {
     "excludeFiles": ["node_modules/**", "bower_components/**"],
 
-    "requireCurlyBraces": [
-        "if",
-        "else",
-        "for",
-        "while",
-        "do",
-        "try",
-        "catch"
-    ],
     "requireOperatorBeforeLineBreak": true,
-    "requireCamelCaseOrUpperCaseIdentifiers": true,
+    "requireCamelCaseOrUpperCaseIdentifiers": false,
     "maximumLineLength": {
       "value": 100,
       "allowComments": true,
       "allowRegex": true
     },
     "validateIndentation": 4,
-    "validateQuoteMarks": "'",
 
     "disallowMultipleLineStrings": true,
     "disallowMixedSpacesAndTabs": true,
