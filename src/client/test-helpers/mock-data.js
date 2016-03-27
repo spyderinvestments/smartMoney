@@ -1,36 +1,146 @@
 /* jshint -W079 */
-var mockData = (function() {
+var mockData = (function () {
     return {
-        getMockPeople: getMockPeople,
+        getMockPeople: getMockBills,
         getMockStates: getMockStates
     };
 
     function getMockStates() {
-        return [
-            {
-                state: 'dashboard',
-                config: {
-                    url: '/',
-                    templateUrl: 'app/dashboard/dashboard.html',
-                    title: 'dashboard',
-                    settings: {
-                        nav: 1,
-                        content: '<i class="fa fa-dashboard"></i> Dashboard'
-                    }
+        return [{
+            state: 'dashboard',
+            config: {
+                url: '/',
+                templateUrl: 'app/dashboard/dashboard.html',
+                title: 'dashboard',
+                settings: {
+                    nav: 1,
+                    content: '<i class="fa fa-dashboard"></i> Dashboard'
                 }
             }
-        ];
+        }];
     }
 
-    function getMockPeople() {
-        return [
-            {firstName: 'John', lastName: 'Papa', age: 25, location: 'Florida'},
-            {firstName: 'Ward', lastName: 'Bell', age: 31, location: 'California'},
-            {firstName: 'Colleen', lastName: 'Jones', age: 21, location: 'New York'},
-            {firstName: 'Madelyn', lastName: 'Green', age: 18, location: 'North Dakota'},
-            {firstName: 'Ella', lastName: 'Jobs', age: 18, location: 'South Dakota'},
-            {firstName: 'Landon', lastName: 'Gates', age: 11, location: 'South Carolina'},
-            {firstName: 'Haley', lastName: 'Guthrie', age: 35, location: 'Wyoming'}
-        ];
+    function getMockBills() {
+        return [{
+            '_id': '56f0aad96421a9d540c80cf1',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0aada6421a9d540c80cf2',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0aadb6421a9d540c80cf3',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0aadc6421a9d540c80cf4',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0aadc6421a9d540c80cf5',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0aadd6421a9d540c80cf6',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0ad0ca72254f640acdf80',
+            'name': 'test bill',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0ad0ea72254f640acdf81',
+            'name': 'test bill',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0ad0ea72254f640acdf82',
+            'name': 'test bill',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0ad0ea72254f640acdf83',
+            'name': 'test bill',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0ad0fa72254f640acdf84',
+            'name': 'test bill',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0ad0fa72254f640acdf85',
+            'name': 'test bill',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0ad0fa72254f640acdf86',
+            'name': 'test bill',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }, {
+            '_id': '56f0ad0fa72254f640acdf87',
+            'name': 'test bill',
+            'due': '2016-03-15T07:00:00.000Z',
+            'amount': '43',
+            '__v': 0,
+            'notes': 'none',
+            'paid': false,
+            'split': []
+        }];
     }
 })();
