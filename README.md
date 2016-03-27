@@ -6,11 +6,11 @@
 
 
 1. [Scope](##Scope)
-    1. [Features](###Features)
-    1. [TODO](#Todo)
-    1. [Installing Dependencies](##Installation)
+1. [Features](###Features)
+1. [TODO](#Todo)
+1. [Installing Dependencies](##Installation)
 
-## Scope:
+### Scope:
 
 1. Be able to add rent, household bills, etc.
 2. Visualize monthly expense with d3
@@ -32,7 +32,7 @@ This is a MEAN Stack app which includes:
 - Gulp
 - Mocha, Chai, Karma
 
-### Todo:
+#### Todo:
 
 - [ ] Update custom 404 page
 
