@@ -1,37 +1,37 @@
 'use strict';
 
 const express = require('express'),
-  User = require('../models/user'),
-  authMiddleware = require('../utils/authenticate');
+    User = require('../models/user'),
+    authMiddleware = require('../utils/authenticate');
 
 let router = express.Router();
 
 router.post('/register', (req, res) => {
-  User.register(req.body, (err, token) => {
-    if (err) console.log("error registering", err);
-    res.status(err ? 400 : 200).send(err || token);
-  });
+    User.register(req.body, (err, token) => {
+        if (err) console.log('error registering', err);
+        res.status(err ? 400 : 200).send(err || token);
+    });
 });
 
 router.post('/login', (req, res) => {
-  User.login(req.body, (err, token) => {
-    if (err) console.log("error logging in", err);
-    res.status(err ? 400 : 200).send(err || token);
-  });
+    User.login(req.body, (err, token) => {
+        if (err) console.log('error logging in', err);
+        res.status(err ? 400 : 200).send(err || token);
+    });
 });
 
 router.post('/guest', (req, res) => {
-  User.createGuest((err, token) => {
-    if (err) console.log("error creating guest", err);
-    res.status(err ? 400 : 200).send(err || token);
-  });
-})
+    User.createGuest((err, token) => {
+        if (err) console.log('error creating guest', err);
+        res.status(err ? 400 : 200).send(err || token);
+    });
+});
 
 router.get('/user/:userId', authMiddleware, (req, res) => {
-  User.getOneAuth(req, res, (err, user, res) => {
-    res.send(err || user);
-  })
-})
+    User.getOneAuth(req, res, (err, user, res) => {
+        res.send(err || user);
+    });
+});
 
 // router.post('/likeResource/:resourceId', authMiddleware, (req, res) => {
 //   User.likeResource(req.params.resourceId, req.userId, (err, msg) => {

@@ -1,22 +1,8 @@
 {
     "excludeFiles": ["node_modules/**", "bower_components/**"],
 
-    "requireCurlyBraces": [
-        "if",
-        "else",
-        "for",
-        "while",
-        "do",
-        "try",
-        "catch"
-    ],
     "requireOperatorBeforeLineBreak": true,
-    "requireCamelCaseOrUpperCaseIdentifiers": true,
-    "maximumLineLength": {
-      "value": 100,
-      "allowComments": true,
-      "allowRegex": true
-    },
+    "requireCamelCaseOrUpperCaseIdentifiers": false,
     "validateIndentation": 4,
     "validateQuoteMarks": "'",
 
@@ -61,7 +47,7 @@
         "checkTypes": true
     },
 
-    "disallowMultipleLineBreaks": true,
+    "disallowMultipleLineBreaks": false,
 
     "disallowCommaBeforeLineBreak": null,
     "disallowDanglingUnderscores": null,

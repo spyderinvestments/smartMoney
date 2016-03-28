@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -12,7 +12,7 @@
         vm.busyMessage = 'Please wait ...';
         vm.isBusy = true;
         $rootScope.showSplash = true;
-        
+
         activate();
 
         function activate() {
@@ -22,7 +22,7 @@
 
         function hideSplash() {
             //Force a 1 second delay so we can see the splash.
-            $timeout(function() {
+            $timeout(function () {
                 $rootScope.showSplash = false;
             }, 1300);
         }
